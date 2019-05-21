@@ -15,6 +15,9 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('team_id')->nullable();
+            $table->bigInteger('player_id')->nullable();
             $table->timestamps();
         });
     }
