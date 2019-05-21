@@ -11,4 +11,14 @@ class Entry extends Model
         'player_id'
     ];
 
+    public function user() {
+        return $this->hasOne('App\User');
+    }
+    public function team() {
+        return $this->hasOne('App\Team');
+    }
+    public function player() {
+        return $this->hasOne('App\Player');
+    }
+
 }

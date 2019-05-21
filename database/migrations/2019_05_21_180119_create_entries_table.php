@@ -16,9 +16,17 @@ class CreateEntriesTable extends Migration
         Schema::create('entries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
-            $table->bigInteger('team_id')->nullable();
-            $table->bigInteger('player_id')->nullable();
+            $table->bigInteger('team_id')->unsigned()->nullable();
+            $table->bigInteger('player_id')->unsigned()->nullable();
             $table->timestamps();
+        });
+        Schema::table('entries', function($table) {
+            $table->foreign('user_id')->references('id')
+                  ->on('users')->onDelete('cascade');
+            $table->foreign('team_id')->references('id')
+                  ->on('teams')->onDelete('cascade');
+            $table->foreign('player_id')->references('id')
+                    ->on('players')->onDelete('cascade');
         });
     }
 

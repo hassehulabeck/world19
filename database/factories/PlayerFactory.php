@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Player::class, function (Faker $faker) {
     return [
-        'name' => $faker->femaleName,
-        'birthday' => $faker->date($format='Y-m-d', $max='1990-01-01'),
-        'country' => $faker->country,
+        'name' => $faker->firstNameFemale . " " . $faker->lastName,
+        'gruppering' => $faker->numberBetween($min = 0, $max = 5),
+        'team_id' => $faker->numberBetween($min = 1, $max = 24),
     ];
 });
