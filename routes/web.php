@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
 });
+
+Route::resource('/teams', 'TeamController');
+Route::resource('/players', 'PlayerController');
+Route::resource('/entries', 'EntryController');
