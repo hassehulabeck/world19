@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Player;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PlayerController extends Controller
 {
@@ -14,7 +15,10 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        $players = Player::paginate(10);
+        return view('player.index', [
+            'players' => $players
+        ]);
     }
 
     /**
@@ -46,7 +50,10 @@ class PlayerController extends Controller
      */
     public function show(Player $player)
     {
-        //
+        $player = Player::find($player);
+        return view('player.show', [
+            'player' => $player
+        ]);
     }
 
     /**

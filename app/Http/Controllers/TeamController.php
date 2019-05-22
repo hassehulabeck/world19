@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TeamController extends Controller
 {
@@ -14,7 +15,11 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::paginate(8);
+        return view('team.index', [
+            'teams' => $teams
+        ]);
+
     }
 
     /**
@@ -46,7 +51,11 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        $team = Team::find($team);
+        return view('team.show', [
+            'team' => $team
+        ]);
+
     }
 
     /**

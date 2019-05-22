@@ -3,7 +3,7 @@
 @section('main')
     @foreach($players as $player) 
         <div class="team">
-            <h1>{{ $player->name }}</h1>
+            <a href="/players/{{$player->id}}"> <h1>{{ $player->name }}</h1></a>
             <h4>Spelar för {{ $player->team->name }}.</h4>
         </div>
     @endforeach
