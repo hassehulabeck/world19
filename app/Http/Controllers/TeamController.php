@@ -15,7 +15,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::paginate(8);
+        $teams = Team::orderBy('name')->paginate(8);
         return view('team.index', [
             'teams' => $teams
         ]);

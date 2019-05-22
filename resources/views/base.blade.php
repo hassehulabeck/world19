@@ -22,6 +22,10 @@
 <body>
     <div class="container">
             <div class="links">
+                    @if (\Request::is('/'))
+                    @else
+                        <a href="/">Home</a>    
+                    @endif
                     <a href="/teams">Teams</a>
                     <a href="/players">Players</a>
                     <a href="/entries">Entries</a>

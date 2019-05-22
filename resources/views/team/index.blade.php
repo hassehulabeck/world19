@@ -1,6 +1,6 @@
-@extends('base')
+@extends('layouts.app')
 
-@section('main')
+@section('content')
     @foreach($teams as $team) 
         <div class="team">
             <a href="/teams/{{$team->id}}">

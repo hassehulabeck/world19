@@ -15,7 +15,9 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        $players = Player::paginate(10);
+        $players = Player::orderBy('gruppering')
+            ->orderBy('name')    
+            ->paginate(10);
         return view('player.index', [
             'players' => $players
         ]);

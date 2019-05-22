@@ -1,6 +1,6 @@
-@extends('base')
+@extends('layouts.app')
 
-@section('main')
+@section('content')
     <div>
         <h1>{{ $team[0]->name}}</h1>
         <h3>Har följande spelare</h3>
