@@ -6,7 +6,9 @@
         <h3>
             <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
             </span>
-            {{ $player->team->name }}
+            <a href="/teams/{{$player->team->id}}"> 
+                {{ $player->team->name }}
+            </a>
         </h3>
         <p>{{ $player->points }} poäng hittills.</p>
     </div> 
