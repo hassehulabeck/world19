@@ -4,7 +4,9 @@
     @foreach($teams as $team) 
         <div class="team">
             <a href="/teams/{{$team->id}}">
-                <h1>{{ $team->name }}</h1>
+                <h1>            <span class="flag-icon flag-icon-{{$team->abbreviation }} ">
+                    </span>
+         {{ $team->name }}</h1>
             </a>
             <h4>Har följande spelare:</h4>
             @if ($team->players != 'null')

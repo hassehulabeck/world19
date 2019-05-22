@@ -2,8 +2,12 @@
 
 @section('content')
     <div>
-        <h1>{{ $player[0]->name}}</h1>
-        <h3> {{ $player[0]->team->name }}</h3>
-        <p>{{ $player[0]->points }} poäng hittills.</p>
+        <h1>{{ $player->name}}</h1>
+        <h3>
+            <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
+            </span>
+            {{ $player->team->name }}
+        </h3>
+        <p>{{ $player->points }} poäng hittills.</p>
     </div> 
 @endsection

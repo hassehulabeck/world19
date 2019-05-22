@@ -2,7 +2,11 @@
 
 @section('content')
     <div>
-        <h1>{{ $team[0]->name}}</h1>
+        <h1>
+            <span class="flag-icon flag-icon-{{$team[0]->abbreviation }} ">
+            </span>
+            {{ $team[0]->name}}
+        </h1>
         <h3>Har följande spelare</h3>
         @foreach ($team[0]->players as $player)
             <a href="/players/{{$player->id}} "> {{ $player->name }}, 

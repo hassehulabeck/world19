@@ -4,9 +4,11 @@
     @foreach($players as $player) 
         <div class="team">
             <a href="/players/{{$player->id}}"> 
-                <h1>{{ $player->name }}</h1>
+                <h1>{{ $player->name }}
+                    <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
+                    </span>
+                </h1>
             </a>
-            <h4>Spelar för {{ $player->team->name }}.</h4>
         </div>
     @endforeach
     {{ $players->links() }}

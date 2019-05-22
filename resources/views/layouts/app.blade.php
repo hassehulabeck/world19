@@ -18,6 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Flaggor -->
+    <link href="{{ asset('css/flag-icon-css/assets/docs.css') }} " rel="stylesheet">
+    <link href="{{ asset('css/flag-icon-css/css/flag-icon.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">

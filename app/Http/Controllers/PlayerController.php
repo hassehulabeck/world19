@@ -52,7 +52,6 @@ class PlayerController extends Controller
      */
     public function show(Player $player)
     {
-        $player = Player::find($player);
         return view('player.show', [
             'player' => $player
         ]);
