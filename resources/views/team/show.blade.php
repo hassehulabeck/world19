@@ -3,16 +3,16 @@
 @section('content')
     <div>
         <h1>
-            <span class="flag-icon flag-icon-{{$team[0]->abbreviation }} ">
+            <span class="flag-icon flag-icon-{{$team->abbreviation }} ">
             </span>
-            {{ $team[0]->name}}
+            {{ $team->name}}
         </h1>
         <h3>Har följande spelare</h3>
-        @foreach ($team[0]->players as $player)
+        @foreach ($team->players as $player)
             <a href="/players/{{$player->id}} "> {{ $player->name }}, 
                 ({{ $player->points }}) </a><br/>
         @endforeach
         <h3>Poäng</h3>
-        <p> {{ $team[0]->points }} </p>
+        <p> {{ $team->points }} </p>
     </div> 
 @endsection

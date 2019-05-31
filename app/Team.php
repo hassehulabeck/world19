@@ -9,4 +9,8 @@ class Team extends Model
     public function players() {
         return $this->hasMany('App\Player');
     }
+    public function entries() {
+        return $this->hasMany('App\Entry', 'id', 'pick_id');
+    }
+
 }

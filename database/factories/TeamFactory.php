@@ -8,7 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(Team::class, function (Faker $faker) {
     return [
         'name' => $faker->country,
-        'gruppering' => $faker->numberBetween($min = 100, $max = 103),
+        'abbreviation' => $faker->randomletter . $faker->randomletter,
+        'gruppering' => $faker->numberBetween($min = 1, $max = 4),
         'grupp' => $faker->randomElement($array = array ('A','B','C', 'D', 'E', 'F')),
     ];
 });

@@ -6,19 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Entry extends Model
 {
-    protected $fillable = [
-        'team_id',
-        'player_id'
-    ];
-
-    public function user() {
-        return $this->hasOne('App\User');
-    }
     public function team() {
-        return $this->hasOne('App\Team');
+        return $this->belongsTo('App\Team', 'pick_id');
     }
     public function player() {
-        return $this->hasOne('App\Player');
+        return $this->belongsTo('App\Player', 'pick_id');
+    }
+    public function user() {
+        return $this->belongsTo('App\User', 'user_id');
     }
 
 }

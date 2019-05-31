@@ -1,0 +1,12 @@
+.entryholder {
+    display: flex;
+}
+
+.entries {
+    flex: 1 0 auto;
+}
+
+.entries li,
+.entry {
+    list-style-type: none;
+}

@@ -51,7 +51,7 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        $team = Team::find($team);
+        $team = Team::find($team->id);
         return view('team.show', [
             'team' => $team
         ]);
