@@ -15,9 +15,15 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $teams = Team::orderBy('name')->paginate(8);
+        $teams1 = Team::where('gruppering', 1)->get();
+        $teams2 = Team::where('gruppering', 2)->get();
+        $teams3 = Team::where('gruppering', 3)->get();
+        $teams4 = Team::where('gruppering', 4)->get();
         return view('team.index', [
-            'teams' => $teams
+            'teams1' => $teams1,
+            'teams2' => $teams2,
+            'teams3' => $teams3,
+            'teams4' => $teams4,
         ]);
 
     }
@@ -78,7 +84,12 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        //
+        Team::where('id', $team->id)
+        ->increment('points', 1, [
+            'updated_at' => now()
+        ]);
+
+        return redirect('teams');
     }
 
     /**

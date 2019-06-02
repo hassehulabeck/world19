@@ -11,5 +11,15 @@
             </a>
         </h3>
         <p>{{ $player->points }} poäng hittills.</p>
+        @can('admin-only')
+            {!! Form::open(['route' => ['players.update', $player->id], 'method' => 'post']) !!}
+            {{ method_field('PATCH') }}
+            @csrf
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-sm btn-danger" value="Add a goal">
+            </div>
+            {!! Form::close() !!}
+        @endcan
     </div> 
 @endsection

@@ -37,10 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function teamentries() {
-        return $this->hasMany('App\TeamEntry');
-    }
-    public function playerentries() {
-        return $this->hasMany('App\PlayerEntry');
+    public function entries() {
+        return $this->hasMany('App\Entry');
     }
 }

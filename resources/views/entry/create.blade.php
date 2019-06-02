@@ -9,6 +9,8 @@
    @endforeach
   </ul>
 @endif
+<div class="row">
+<div class="col-12 col-md-6">
 
 {!! Form::open(['route' => 'entries.store']) !!}
  
@@ -66,6 +68,8 @@
     </select>
 </div>
 
+</div>
+<div class="col-12 col-md-6">
 <div class="form-group">
     {!! Form::label('player0', 'Målvakt') !!}
     <select class="form-control" name="player0">
@@ -159,5 +163,6 @@
 {!! Form::submit('Spara mitt entry', ['class' => 'btn btn-info']) !!}
 
 {!! Form::close() !!}
-
+</div>
+</div>
 @endsection

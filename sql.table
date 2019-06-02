@@ -1,0 +1,15 @@
+SELECT 
+entries.id, 
+users.name, 
+SUM(teams.points) AS W, 
+SUM(Scorers.points) AS G,
+SUM(Goalies.points) AS Z,
+SUM(teams.points) + SUM(Scorers.points) + SUM(Goalies.points) AS Pts
+FROM entries
+LEFT JOIN teams ON entries.pick_id = teams.id
+LEFT JOIN players Scorers ON entries.pick_id = Scorers.id AND Scorers.gruppering > 0
+LEFT JOIN players Goalies ON entries.pick_id = Goalies.id AND Goalies.gruppering = 0
+INNER JOIN users ON users.id = entries.user_id
+GROUP BY users.id
+ORDER BY Pts DESC, users.name
+LIMIT 0, 500

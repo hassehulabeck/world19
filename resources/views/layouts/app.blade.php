@@ -42,6 +42,7 @@
                         <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
                         <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
                         <li class="nav-item"><a class="nav-link" href="/entries">Entries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/table">Ställning</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -83,7 +84,7 @@
         <main class="py-4">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8">    
+                    <div class="col-12 col-md-10">    
                         @yield('content')
                     </div>
                 </div>

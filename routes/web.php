@@ -18,9 +18,14 @@ Route::get('/home', function () {
     return view('start');
 });
 
+Route::get('/table', function () {
+    return view('table', 'EntryController@table');
+});
+
 Route::resource('/teams', 'TeamController');
 Route::resource('/players', 'PlayerController');
 Route::resource('/entries', 'EntryController');
+
 
 Auth::routes();
 

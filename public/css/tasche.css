@@ -7,6 +7,8 @@
 }
 
 .entries li,
-.entry {
+.entry,
+.teams,
+.players {
     list-style-type: none;
 }

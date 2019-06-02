@@ -12,6 +12,21 @@ use Illuminate\Support\Facades\Auth;
 
 class EntryController extends Controller
 {
+
+    /**
+     * Gets the view totalTable
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function table() {
+        $entries = DB::table('totaltable')->get();
+
+        return view('table', [
+            'entries' => $entries,
+        ]);
+
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +34,10 @@ class EntryController extends Controller
      */
     public function index()
     {
-        $entries = Entry::all();
+        $users = User::all();
 
         return view('entry.index', [
-            'entries' => $entries    
+            'users' => $users,
         ]);
     }
 
@@ -33,11 +48,12 @@ class EntryController extends Controller
      */
     public function create()
     {
+
         // Kolla om användaren redan skapat ett entry.
         // I så fall, redirecta till update.
         $user = Entry::where('user_id', Auth::id())->first();
         if ($user !== null) {
-            return view('entry.edit');
+            return redirect('/entries/' . $user->id . '/edit');
         }
 
         // Teams
@@ -172,7 +188,7 @@ class EntryController extends Controller
      * @param  \App\Entry  $entry
      * @return \Illuminate\Http\Response
      */
-    public function edit(Entry $entry)
+    public function edit($user)
     {
         // Teams
         for ($i = 1; $i<=4; $i++) {

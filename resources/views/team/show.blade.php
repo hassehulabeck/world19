@@ -14,5 +14,16 @@
         @endforeach
         <h3>Poäng</h3>
         <p> {{ $team->points }} </p>
+        @can('admin-only')
+        {!! Form::open(['route' => ['teams.update', $team->id], 'method' => 'post']) !!}
+        {{ method_field('PATCH') }}
+        @csrf
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-sm btn-danger" value="Lägg till en vinst">
+        </div>
+        {!! Form::close() !!}
+    @endcan
+
     </div> 
 @endsection
