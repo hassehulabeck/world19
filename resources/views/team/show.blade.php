@@ -12,7 +12,7 @@
             <a href="/players/{{$player->id}} "> {{ $player->name }}, 
                 ({{ $player->points }}) </a><br/>
         @endforeach
-        <h3>Poäng</h3>
+        <h3>Antal vinster</h3>
         <p> {{ $team->points }} </p>
         @can('admin-only')
         {!! Form::open(['route' => ['teams.update', $team->id], 'method' => 'post']) !!}

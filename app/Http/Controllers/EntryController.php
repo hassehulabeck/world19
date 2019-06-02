@@ -22,7 +22,7 @@ class EntryController extends Controller
         $entries = DB::table('totaltable')->get();
 
         return view('table', [
-            'entries' => $entries,
+            'entries' => $entries 
         ]);
 
     }

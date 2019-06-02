@@ -17,7 +17,7 @@
             @csrf
 
             <div class="form-group">
-                <input type="submit" class="btn btn-sm btn-danger" value="Add a goal">
+                <input type="submit" class="btn btn-sm btn-danger" value="Add a point">
             </div>
             {!! Form::close() !!}
         @endcan

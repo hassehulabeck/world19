@@ -18,9 +18,7 @@ Route::get('/home', function () {
     return view('start');
 });
 
-Route::get('/table', function () {
-    return view('table', 'EntryController@table');
-});
+Route::get('/table', 'EntryController@table');
 
 Route::resource('/teams', 'TeamController');
 Route::resource('/players', 'PlayerController');

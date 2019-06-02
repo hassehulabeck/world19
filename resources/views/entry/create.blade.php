@@ -9,11 +9,11 @@
    @endforeach
   </ul>
 @endif
-<div class="row">
-<div class="col-12 col-md-6">
 
 {!! Form::open(['route' => 'entries.store']) !!}
- 
+<div class="row">
+        <div class="col-12 col-md-6">
+         
 <div class="form-group">
     {!! Form::label('team1', 'Team 1') !!}
     <select class="form-control" name="team1">

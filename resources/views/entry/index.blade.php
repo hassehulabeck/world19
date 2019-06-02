@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@if (Auth::check())
 @foreach ($users as $user)
     <ul class="entries">
         <li>
@@ -46,5 +47,10 @@
     </div>
         
 @endforeach
+    
+@else
+    <h1>Häng med</h1>
+    <p>Registrera dig och logga in för att öka spänningen under VM.</p>    
+@endif
 
 @endsection

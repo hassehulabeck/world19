@@ -18,6 +18,7 @@ class CreateTeamsTable extends Migration
             $table->integer('gruppering');
             $table->string('grupp');
             $table->string('name');
+            $table->text('about');
             $table->integer('points')->default(0);
             $table->string('abbreviation')->nullable()->default('us');
             $table->timestamps();

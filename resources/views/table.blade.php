@@ -2,25 +2,25 @@
 
 @section('content')
     
-<table>
+<table class="table">
 <thead>
     <tr>
         <th>Placering</th>
         <th>Namn</th>
-        <th>Vinster</th>
-        <th>Mål</th>
-        <th>Nollor</th>
-        <th>Totalt</th>
+        <th class="text-right">Vinster</th>
+        <th class="text-right">Mål</th>
+        <th class="text-right">Nollor</th>
+        <th class="text-right">Totalt</th>
     </tr>
 </thead>
 @foreach ($entries as $entry)
     <tr>
-        <td> {{ loop->index + 1}}</td>
+        <td> {{ $loop->iteration }}</td>
         <td>{{$entry->name}}</td>
-        <td>{{$entry->W}}</td>
-        <td>{{$entry->G}}</td>
-        <td>{{$entry->Z}}</td>
-        <td>{{$entry->Pts}}</td>
+        <td class="text-right">{{$entry->W}}</td>
+        <td class="text-right">{{$entry->G}}</td>
+        <td class="text-right">{{$entry->Z}}</td>
+        <td class="text-right">{{$entry->Pts}}</td>
     </tr>
 @endforeach
 </table>
