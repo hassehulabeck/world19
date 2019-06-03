@@ -10,7 +10,7 @@
   </ul>
 @endif
 
-{!! Form::open(['url' => 'entries/' . $userID . '/update']) !!}
+{{ Form::open(array('method'=>'PUT','route' => ['entries.update', $userID])) }}
 <div class="row">
         <div class="col-12 col-md-6"> 
 <div class="form-group">

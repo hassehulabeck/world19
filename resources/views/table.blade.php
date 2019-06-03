@@ -5,7 +5,7 @@
 <table class="table">
 <thead>
     <tr>
-        <th>Placering</th>
+        <th>#</th>
         <th>Namn</th>
         <th class="text-right">Vinster</th>
         <th class="text-right">Mål</th>

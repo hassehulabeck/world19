@@ -245,31 +245,33 @@ class EntryController extends Controller
             'player4'  => 'required|integer',
             'player5'  => 'required|integer',
         ]);
+
+        DB::table('entries')->where('user_id', Auth::id())->delete();
           
         DB::table('entries')->insert([
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->team1, 
                 'isPlayer' => '0', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(),
                 'pick_id' => $request->team2,
                 'isPlayer' => '0', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(),
                 'pick_id' => $request->team3,
                 'isPlayer' => '0', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->team4,
                 'isPlayer' => '0', 
-                'created_at' => now()
+                'updated_at' => now()
             ]
         ]);
 
@@ -278,39 +280,40 @@ class EntryController extends Controller
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->player0,
                 'isPlayer' => '1', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->player1,
                 'isPlayer' => '1', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->player2,
                 'isPlayer' => '1', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->player3,
                 'isPlayer' => '1', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->player4,
                 'isPlayer' => '1', 
-                'created_at' => now()
+                'updated_at' => now()
             ],
             [
                 'user_id' => Auth::id(), 
                 'pick_id' => $request->player5,
                 'isPlayer' => '1', 
-                'created_at' => now()
+                'updated_at' => now()
             ]
         ]);        
+        return redirect('/entries');
     }
 
     /**

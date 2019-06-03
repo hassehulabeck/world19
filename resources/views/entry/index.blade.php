@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 @if (Auth::check())
 @if (new DateTime("2019-06-07 19:00:00") > new DateTime())
     <p>Innan första matchen startar kan du inte se de andras tips.</p>
