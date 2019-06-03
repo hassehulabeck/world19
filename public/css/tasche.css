@@ -1,3 +1,9 @@
+main .container {
+    background: khaki;
+    padding: 1em;
+    border-radius: 6px;
+}
+
 .entryholder {
     display: flex;
 }

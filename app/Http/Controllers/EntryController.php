@@ -166,6 +166,8 @@ class EntryController extends Controller
                 'created_at' => now()
             ]
         ]);
+
+        return redirect('/entries');
     }
 
     /**

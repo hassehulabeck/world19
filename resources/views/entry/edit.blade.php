@@ -11,7 +11,8 @@
 @endif
 
 {!! Form::open(['url' => 'entries/' . $userID . '/update']) !!}
- 
+<div class="row">
+        <div class="col-12 col-md-6"> 
 <div class="form-group">
     {!! Form::label('team1', 'Team 1') !!}
     <select class="form-control" name="team1">
@@ -39,9 +40,15 @@
                     Inget lag valt
                 </option>
             @foreach($teams2 as $team)
-            <option value="{{ $team->id}}" >
-                {{$team->name}}
-            </option>
+            @if ($team->id == $picks[1]->pick_id)
+                <option value="{{ $team->id}}" selected="selected">
+                    {{$team->name}}
+                </option>
+            @else
+                <option value="{{ $team->id}}">
+                    {{$team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -52,9 +59,15 @@
                     Inget lag valt
                 </option>
             @foreach($teams3 as $team)
-            <option value="{{ $team->id}}" >
-                {{$team->name}}
-            </option>
+            @if ($team->id == $picks[2]->pick_id)
+                <option value="{{ $team->id}}" selected="selected">
+                    {{$team->name}}
+                </option>
+            @else
+                <option value="{{ $team->id}}">
+                    {{$team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -65,12 +78,20 @@
                     Inget lag valt
                 </option>
             @foreach($teams4 as $team)
-            <option value="{{ $team->id}}" >
-                {{$team->name}}
-            </option>
+            @if ($team->id == $picks[3]->pick_id)
+                <option value="{{ $team->id}}" selected="selected">
+                    {{$team->name}}
+                </option>
+            @else
+                <option value="{{ $team->id}}">
+                    {{$team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
+</div>
+<div class="col-12 col-md-6">
 
 <div class="form-group">
     {!! Form::label('player0', 'Målvakt') !!}
@@ -79,10 +100,17 @@
                     Ingen spelare vald
                 </option>
             @foreach($players0 as $player)
-            <option value="{{ $player->id}}" >
-                {{$player->name}} - 
-                {{$player->team->name }}
-            </option>
+            @if ($player->id == $picks[4]->pick_id)
+                <option value="{{ $player->id}}" selected="selected">
+                    {{$player->name}} - 
+                    {{$player->team->name}}
+                </option>
+            @else
+                <option value="{{ $player->id}}">
+                        {{$player->name}} - 
+                        {{$player->team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -94,10 +122,17 @@
                     Ingen spelare vald
                 </option>
             @foreach($players1 as $player)
-            <option value="{{ $player->id}}" >
-                {{$player->name}} - 
-                {{$player->team->name }}
-            </option>
+            @if ($player->id == $picks[5]->pick_id)
+                <option value="{{ $player->id}}" selected="selected">
+                    {{$player->name}} - 
+                    {{$player->team->name}}
+                </option>
+            @else
+                <option value="{{ $player->id}}">
+                        {{$player->name}} - 
+                        {{$player->team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -109,10 +144,17 @@
                     Ingen spelare vald
                 </option>
             @foreach($players2 as $player)
-            <option value="{{ $player->id}}" >
-                {{$player->name}} - 
-                {{$player->team->name }}
-            </option>
+            @if ($player->id == $picks[6]->pick_id)
+                <option value="{{ $player->id}}" selected="selected">
+                    {{$player->name}} - 
+                    {{$player->team->name}}
+                </option>
+            @else
+                <option value="{{ $player->id}}">
+                        {{$player->name}} - 
+                        {{$player->team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -124,10 +166,17 @@
                     Ingen spelare vald
                 </option>
             @foreach($players3 as $player)
-            <option value="{{ $player->id}}" >
-                {{$player->name}} - 
-                {{$player->team->name }}
-            </option>
+            @if ($player->id == $picks[7]->pick_id)
+                <option value="{{ $player->id}}" selected="selected">
+                    {{$player->name}} - 
+                    {{$player->team->name}}
+                </option>
+            @else
+                <option value="{{ $player->id}}">
+                        {{$player->name}} - 
+                        {{$player->team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -139,10 +188,17 @@
                     Ingen spelare vald
                 </option>
             @foreach($players4 as $player)
-            <option value="{{ $player->id}}" >
-                {{$player->name}} - 
-                {{$player->team->name }}
-            </option>
+            @if ($player->id == $picks[8]->pick_id)
+                <option value="{{ $player->id}}" selected="selected">
+                    {{$player->name}} - 
+                    {{$player->team->name}}
+                </option>
+            @else
+                <option value="{{ $player->id}}">
+                        {{$player->name}} - 
+                        {{$player->team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
@@ -154,16 +210,23 @@
                     Ingen spelare vald
                 </option>
             @foreach($players5 as $player)
-            <option value="{{ $player->id}}" >
-                {{$player->name}} - 
-                {{$player->team->name }}
-            </option>
+            @if ($player->id == $picks[9]->pick_id)
+                <option value="{{ $player->id}}" selected="selected">
+                    {{$player->name}} - 
+                    {{$player->team->name}}
+                </option>
+            @else
+                <option value="{{ $player->id}}">
+                        {{$player->name}} - 
+                        {{$player->team->name}}
+                </option>                
+            @endif
         @endforeach
     </select>
 </div>
 
-{!! Form::submit('Spara mitt entry', ['class' => 'btn btn-info']) !!}
+{!! Form::submit('Uppdatera mitt entry', ['class' => 'btn btn-info']) !!}
 
 {!! Form::close() !!}
-
+</div>
 @endsection

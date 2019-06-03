@@ -17,7 +17,11 @@
             @csrf
 
             <div class="form-group">
-                <input type="submit" class="btn btn-sm btn-danger" value="Add a point">
+                @if ($player->gruppering == 0)
+                    <input type="submit" class="btn btn-sm btn-danger" value="Lägg till en nolla">
+                @else    
+                    <input type="submit" class="btn btn-sm btn-danger" value="Lägg till ett mål">
+                @endif
             </div>
             {!! Form::close() !!}
         @endcan

@@ -91,7 +91,13 @@
             </div>                
         </main>
         <footer>
-            @yield('foot')
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        En tävling från Hulabeck Mediabyrå.
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

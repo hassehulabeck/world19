@@ -7,11 +7,15 @@
             </span>
             {{ $team->name}}
         </h1>
+        <p> {{ $team->about }} </p>
         <h3>Har följande spelare</h3>
+        <ul class="players">
         @foreach ($team->players as $player)
-            <a href="/players/{{$player->id}} "> {{ $player->name }}, 
-                ({{ $player->points }}) </a><br/>
+            <li><a href="/players/{{$player->id}} "> {{ $player->name }}, 
+                ({{ $player->points }}) </a>
+            </li>
         @endforeach
+        </ul>
         <h3>Antal vinster</h3>
         <p> {{ $team->points }} </p>
         @can('admin-only')

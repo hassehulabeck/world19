@@ -2,6 +2,10 @@
 
 @section('content')
 @if (Auth::check())
+@if (new DateTime("2019-06-07 19:00:00") > new DateTime())
+    <p>Innan första matchen startar kan du inte se de andras tips.</p>
+    <p>Men du kan finslipa <a href="/entries/{{Auth::user()->id}}/edit">ditt eget.</a></p>
+@else 
 @foreach ($users as $user)
     <ul class="entries">
         <li>
@@ -47,6 +51,8 @@
     </div>
         
 @endforeach
+
+@endif
     
 @else
     <h1>Häng med</h1>
