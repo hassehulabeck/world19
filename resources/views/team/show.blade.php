@@ -10,8 +10,13 @@
         <p> {{ $team->about }} </p>
         <h3>Har följande spelare</h3>
         <ul class="players">
-        @foreach ($team->players as $player)
-            <li><a href="/players/{{$player->id}} "> {{ $player->name }}, 
+        @foreach ($team->players->sortBy('gruppering') as $player)
+            @if ($player->gruppering == 0)
+                <li>MV                
+            @else
+                <li>{{$player->gruppering}}
+            @endif
+            <a href="/players/{{$player->id}} "> {{ $player->name }}, 
                 ({{ $player->points }}) </a>
             </li>
         @endforeach
