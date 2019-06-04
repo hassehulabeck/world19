@@ -94,7 +94,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8">
-                        En tävling från Hulabeck Mediabyrå.
+                        <p>En tävling för alla från Hulabeck Mediabyrå.</p>
+                        <p>Kontakt: <a href="mailto:info@hulabeck.se">info@hulabeck.se</a></p>
                     </div>
                 </div>
             </div>
