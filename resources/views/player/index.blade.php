@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-12 col-md-4">
         <h1>Målvakter</h1>
-            @foreach($goalies as $goalie) 
+            @foreach($goalies->sortBy('team_id') as $goalie) 
             <ul class="players">
                 <a href="/players/{{$goalie->id}}"> 
                     <li>{{ $goalie->name }}
@@ -17,7 +17,7 @@
     </div>
     <div class="col-12 col-md-4">
         <h1>Gruppering 1</h1>
-        @foreach($players1 as $player) 
+        @foreach($players1->sortBy('team_id') as $player) 
             <ul class="players">
                 <a href="/players/{{$player->id}}"> 
                     <li>{{ $player->name }}
@@ -30,7 +30,7 @@
     </div>
     <div class="col-12 col-md-4">
         <h1>Gruppering 2</h1>
-        @foreach($players2 as $player) 
+        @foreach($players2->sortBy('team_id') as $player) 
             <ul class="players">
                 <a href="/players/{{$player->id}}"> 
                     <li>{{ $player->name }}
@@ -45,7 +45,7 @@
 <div class="row">
     <div class="col-12 col-md-4">
         <h1>Gruppering 3</h1>
-        @foreach($players3 as $player) 
+        @foreach($players3->sortBy('team_id') as $player) 
             <ul class="players">
                 <a href="/players/{{$player->id}}"> 
                     <li>{{ $player->name }}
@@ -58,7 +58,7 @@
     </div>
     <div class="col-12 col-md-4">
         <h1>Gruppering 4</h1>    
-        @foreach($players4 as $player) 
+        @foreach($players4->sortBy('team_id') as $player) 
             <ul class="players">
                 <a href="/players/{{$player->id}}"> 
                     <li>{{ $player->name }}
@@ -71,7 +71,7 @@
     </div>
     <div class="col-12 col-md-4">
         <h1>Gruppering 5</h1>
-        @foreach($players5 as $player) 
+        @foreach($players5->sortBy('team_id') as $player) 
             <ul class="players">
                 <a href="/players/{{$player->id}}"> 
                     <li>{{ $player->name }}
