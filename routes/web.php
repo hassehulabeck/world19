@@ -10,8 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\User;
+
 Route::get('/', function () {
-    return view('start');
+    return view('start', [
+        'numberOfUsers' => User::count()
+    ]);
 });
 
 Route::get('/home', function () {

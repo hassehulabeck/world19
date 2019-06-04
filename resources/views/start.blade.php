@@ -9,11 +9,15 @@
             <p>Den som behöver förkovra sig lite mer i vilka spelare som har vana av att göra mål, kan med fördel kika på <a href="https://en.wikipedia.org/wiki/2019_FIFA_Women%27s_World_Cup_squads">denna wikipedia-sida</a>.
             </p>
             <h2>Nyheter</h2>
-            <p>Anna Anvegård har lagts till bland de tillgängliga spelarna. (gruppering 4).</p>
+            <p>
+            <span class="flag-icon flag-icon-se "></span>
+            Anna Anvegård har lagts till bland de tillgängliga spelarna. (gruppering 4).</p>
             @if (Auth::check())
             <a href="/entries/create">Ta ut ditt lag</a>                    
             @else
-            <a href="/register">Registrera dig</a> eller
-            <a href="/login">logga in.</a>           
+            <p>Gör som {{ $numberOfUsers }} andra, 
+            <a href="/register">registrera dig</a> eller
+            <a href="/login">logga in.</a>
+            </p>           
             @endif
 @endsection
