@@ -10,6 +10,8 @@
   </ul>
 @endif
 
+@if (new DateTime("2019-06-07 19:00:00") > new DateTime())
+
 {{ Form::open(array('method'=>'PUT','route' => ['entries.update', $userID])) }}
 <div class="row">
         <div class="col-12 col-md-6"> 
@@ -228,5 +230,11 @@
 {!! Form::submit('Uppdatera mitt entry', ['class' => 'btn btn-info']) !!}
 
 {!! Form::close() !!}
+
+@else 
+<h1>Too late</h1>
+<p>Tävlingen har redan startat.</p>
+@endif
+
 </div>
 @endsection
