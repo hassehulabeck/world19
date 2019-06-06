@@ -84,7 +84,9 @@
         <main class="py-4">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-10">    
+                    <div class="col-12 col-md-10">   
+                        @include('layouts.status')
+ 
                         @yield('content')
                     </div>
                 </div>

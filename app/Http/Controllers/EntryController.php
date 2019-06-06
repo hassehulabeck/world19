@@ -167,8 +167,7 @@ class EntryController extends Controller
             ]
         ]);
 
-        return redirect('/entries');
-    }
+        return redirect()->route('entries.index')->with('success', 'Ditt entry har registrerats.');    }
 
     /**
      * Display the specified resource.
@@ -313,7 +312,7 @@ class EntryController extends Controller
                 'updated_at' => now()
             ]
         ]);        
-        return redirect('/entries');
+        return redirect()->route('entries.index')->with('success', 'Ditt entry har ändrats.');
     }
 
     /**
