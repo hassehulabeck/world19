@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Välkommen!
+                    <a href="/entries/create">Ta ut dina lag och dina spelare.</a> 
                 </div>
             </div>
         </div>
