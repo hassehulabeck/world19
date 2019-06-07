@@ -18,3 +18,7 @@ main .container {
 .players {
     list-style-type: none;
 }
+
+img.insta {
+    height: 1em;
+}

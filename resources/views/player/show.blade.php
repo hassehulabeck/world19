@@ -10,6 +10,11 @@
                 {{ $player->team->name }}
             </a>
         </h3>
+        @if ($player->insta != null)
+            <a href="{{ $player->insta }}">
+                <img class="insta" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Instagram_simple_icon.svg" alt="instagram">
+            </a>
+        @endif
         <p>{{ $player->points }} poäng hittills.</p>
         @can('admin-only')
             {!! Form::open(['route' => ['players.update', $player->id], 'method' => 'post']) !!}
