@@ -10,8 +10,7 @@
             </p>
             <h2>Nyheter</h2>
             <p>
-            <span class="flag-icon flag-icon-se "></span>
-            Spelarprofilerna (de flesta) har nu länkar till deras instagramkonto.</p>
+            <img class="insta" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Instagram_simple_icon.svg" alt="instagram"> Spelarprofilerna (de flesta) har nu länkar till deras instagramkonto.</p>
             @if (Auth::check())
             <a href="/entries/create">Ta ut ditt lag</a>                    
             @else
