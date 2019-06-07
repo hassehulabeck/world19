@@ -11,6 +11,9 @@
                     </span>
                     <a href="/teams/{{$team->id}}">
                     {{ $team->name }}
+                    @for ($i = 0; $i < $team->points; $i++)
+                        &starf;
+                    @endfor
                     </a>
                 </li>
             </ul>
@@ -25,6 +28,9 @@
                     </span>
                     <a href="/teams/{{$team->id}}">
                     {{ $team->name }}
+                    @for ($i = 0; $i < $team->points; $i++)
+                        &starf;
+                    @endfor
                     </a>
                 </li>
             </ul>
@@ -41,6 +47,9 @@
                     </span>
                     <a href="/teams/{{$team->id}}">
                     {{ $team->name }}
+                    @for ($i = 0; $i < $team->points; $i++)
+                        &starf;
+                    @endfor
                     </a>
                 </li>
             </ul>
@@ -55,11 +64,15 @@
                         </span>
                         <a href="/teams/{{$team->id}}">
                         {{ $team->name }}
+                        @for ($i = 0; $i < $team->points; $i++)
+                            &starf;
+                        @endfor
                         </a>
                     </li>
                 </ul>
             @endforeach
         </div>
     </div>
+    <p><i>En &starf; per vinst.</i></p>
 </div>    
 @endsection
