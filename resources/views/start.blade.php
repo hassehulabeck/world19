@@ -11,7 +11,7 @@
             <h2>Nyheter</h2>
             <p>
             <span class="flag-icon flag-icon-se "></span>
-            Anna Anvegård har lagts till bland de tillgängliga spelarna. (gruppering 4).</p>
+            Spelarprofilerna (de flesta) har nu länkar till deras instagramkonto.</p>
             @if (Auth::check())
             <a href="/entries/create">Ta ut ditt lag</a>                    
             @else
