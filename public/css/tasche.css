@@ -46,3 +46,14 @@ li.entry:nth-child(5) {
     font-size: 0.7em;
     text-align: right;
 }
+
+
+/* Matcher */
+
+div.match {
+    display: flex;
+}
+
+div.match div {
+    flex: 0 1 auto;
+}

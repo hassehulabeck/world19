@@ -24,12 +24,14 @@ Route::get('/home', function () {
 });
 
 Route::get('/table', 'EntryController@table');
+Route::get('/matches/today', 'MatchController@matchesToday');
 
 Route::resource('/teams', 'TeamController');
 Route::resource('/players', 'PlayerController');
 Route::resource('/entries', 'EntryController');
 
 Route::resource('/forum', 'ForumpostController');
+Route::resource('/matches', 'MatchController');
 
 Auth::routes();
 

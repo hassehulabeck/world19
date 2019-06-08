@@ -12,5 +12,7 @@ class Team extends Model
     public function entries() {
         return $this->hasMany('App\Entry', 'id', 'pick_id');
     }
-
+    public function matches() {
+        return $this->hasMany('App\Match');
+    }
 }
