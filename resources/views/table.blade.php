@@ -13,9 +13,19 @@
         <th class="text-right">Totalt</th>
     </tr>
 </thead>
+@php
+$temp = 0;
+@endphp
 @foreach ($entries as $entry)
     <tr>
-        <td> {{ $loop->iteration }}</td>
+        @if ($entry->Pts != $temp)
+            <td> {{ $loop->iteration }}</td>
+            @php
+                $temp = $entry->Pts;
+            @endphp
+        @else 
+            <td></td>        
+        @endif
         <td>
             <a href="/entries/{{$entry->uid}}">{{$entry->name}}
             </a>

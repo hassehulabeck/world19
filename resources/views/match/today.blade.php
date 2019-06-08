@@ -18,7 +18,22 @@
             <p>
             {{$match->home_goals}} : {{$match->away_goals}}
             </p>           
+            
+            {{$match->homeTeam[0]->name}} finns med i 
+            {!! count($match->homeTeam[0]->entries) !!}
+            @if (count($match->homeTeam[0]->entries) == 1)
+                entry.
+            @else
+                entries.
+            @endif    
 
+            {{$match->awayTeam[0]->name}} finns med i 
+            {!! count($match->awayTeam[0]->entries) !!}
+            @if (count($match->awayTeam[0]->entries) == 1)
+                entry.
+            @else
+                entries.
+            @endif    
         </div>
     </div>
     @endforeach
