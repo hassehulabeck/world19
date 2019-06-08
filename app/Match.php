@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model
 {
+    protected $dates = ['date'];
+    
     public function homeTeam () {
         return $this->hasMany('App\Team', 'id', 'home_team');
     }
