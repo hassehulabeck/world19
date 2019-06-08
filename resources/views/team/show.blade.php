@@ -16,13 +16,23 @@
             @else
                 <li>{{$player->gruppering}}
             @endif
-            <a href="/players/{{$player->id}} "> {{ $player->name }}, 
-                ({{ $player->points }}) </a>
+            <a href="/players/{{$player->id}} "> {{ $player->name }} 
+            @for ($i = 0; $i < $player->points; $i++)
+                @if ($player->gruppering == 0)
+                    &star;
+                @else
+                    &#10026;
+                @endif
+            @endfor     
+            </a>
+
             </li>
         @endforeach
         </ul>
         <h3>Antal vinster</h3>
-        <p> {{ $team->points }} </p>
+        @for ($i = 0; $i < $team->points; $i++)
+            &starf;
+        @endfor
         @can('admin-only')
         {!! Form::open(['route' => ['teams.update', $team->id], 'method' => 'post']) !!}
         {{ method_field('PATCH') }}
