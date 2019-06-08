@@ -40,4 +40,7 @@ class User extends Authenticatable
     public function entries() {
         return $this->hasMany('App\Entry');
     }
+    public function forumposts() {
+        return $this->hasMany('App\Forumpost');
+    }
 }

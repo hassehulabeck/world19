@@ -29,6 +29,7 @@ Route::resource('/teams', 'TeamController');
 Route::resource('/players', 'PlayerController');
 Route::resource('/entries', 'EntryController');
 
+Route::resource('/forum', 'ForumpostController');
 
 Auth::routes();
 

@@ -41,7 +41,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
                         <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/entries">Entries</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/forum">Forum</a></li>
                         <li class="nav-item"><a class="nav-link" href="/table">Ställning</a></li>
                     </ul>
 

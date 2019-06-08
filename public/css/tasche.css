@@ -30,3 +30,19 @@ li.entry:nth-child(4),
 li.entry:nth-child(5) {
     margin-bottom: 0.65em;
 }
+
+.forumpost {
+    border: thin solid brown;
+    border-radius: 6px;
+    margin: 1em 0;
+    padding: 0.5em;
+}
+
+.forumrow label {
+    display: block;
+}
+
+.author {
+    font-size: 0.7em;
+    text-align: right;
+}

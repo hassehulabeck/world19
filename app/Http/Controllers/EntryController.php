@@ -167,7 +167,8 @@ class EntryController extends Controller
             ]
         ]);
 
-        return redirect()->route('entries.index')->with('success', 'Ditt entry har registrerats.');    }
+        return redirect()->route('entries.index')->with('success', 'Ditt entry har registrerats.');
+    }
 
     /**
      * Display the specified resource.
