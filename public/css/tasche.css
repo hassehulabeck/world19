@@ -22,3 +22,11 @@ main .container {
 img.insta {
     height: 1em;
 }
+
+
+/* Gör mellanrum i entry.show listan */
+
+li.entry:nth-child(4),
+li.entry:nth-child(5) {
+    margin-bottom: 0.65em;
+}
