@@ -10,7 +10,7 @@ class Team extends Model
         return $this->hasMany('App\Player');
     }
     public function entries() {
-        return $this->hasMany('App\Entry', 'id', 'pick_id');
+        return $this->hasMany('App\Entry', 'pick_id');
     }
     public function matches() {
         return $this->hasMany('App\Match');
