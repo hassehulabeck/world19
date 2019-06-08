@@ -14,8 +14,7 @@
                         </div>
                     @endif
 
-                    Välkommen!
-                    <a href="/entries/create">Ta ut dina lag och dina spelare.</a> 
+                    Välkommen in!
                 </div>
             </div>
         </div>

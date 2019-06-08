@@ -10,7 +10,8 @@
             </p>
             <h2>Nyheter</h2>
             <p>
-            <img class="insta" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Instagram_simple_icon.svg" alt="instagram"> Spelarprofilerna (de flesta) har nu länkar till deras instagramkonto.</p>
+                Nu räknar algoritmerna rätt på vår tabell (menyvalet "ställning"). <i>Det var en miss i SQL-frågan som inte tydligt nog skiljde på lag och spelare.</i>
+            </p>
             @if (Auth::check())
             <a href="/entries/create">Ta ut ditt lag</a>                    
             @else

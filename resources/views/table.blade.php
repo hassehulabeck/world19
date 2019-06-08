@@ -16,7 +16,10 @@
 @foreach ($entries as $entry)
     <tr>
         <td> {{ $loop->iteration }}</td>
-        <td>{{$entry->name}}</td>
+        <td>
+            <a href="/entries/{{$entry->uid}}">{{$entry->name}}
+            </a>
+        </td>
         <td class="text-right">{{$entry->W}}</td>
         <td class="text-right">{{$entry->G}}</td>
         <td class="text-right">{{$entry->Z}}</td>
