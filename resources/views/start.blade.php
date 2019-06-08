@@ -12,12 +12,8 @@
             <p>
                 Nu räknar algoritmerna rätt på vår tabell (menyvalet "ställning"). <i>Det var en miss i SQL-frågan som inte tydligt nog skiljde på lag och spelare.</i>
             </p>
-            @if (Auth::check() AND ())
-            <a href="/entries/create">Ditt lag</a>                    
-            @else
             <p>Gör som {{ $numberOfUsers }} andra, 
             <a href="/register">registrera dig</a> eller
             <a href="/login">logga in.</a>
             </p>           
-            @endif
 @endsection
