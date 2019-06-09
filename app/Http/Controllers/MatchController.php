@@ -139,17 +139,15 @@ class MatchController extends Controller
         
         // Om det blev hemmavinst
         if ($request->homeGoals > $request->awayGoals) {
-            $wins = $homeTeam->wins + 1;
-            $homeTeam->wins = $wins; 
-            $losses = $awayTeam->losses + 1;
-            $awayTeam->losses = $losses; 
+            $homeTeam->wins = $homeTeam->wins + 1; 
+            $awayTeam->losses = $awayTeam->losses + 1; 
+            $homeTeam->points = $homeTeam->points + 1;
         }
         // Om det blev bortavinst
         if ($request->homeGoals < $request->awayGoals) {
-            $wins = $awayTeam->wins + 1;
-            $awayTeam->wins = $wins; 
-            $losses = $homeTeam->losses + 1;
-            $homeTeam->losses = $losses; 
+            $awayTeam->wins = $awayTeam->wins + 1; 
+            $homeTeam->losses = $homeTeam->losses + 1; 
+            $awayTeam->points = $awayTeam->points + 1;
         }
         // Om det blev oavgjort
         if ($request->homeGoals == $request->awayGoals) {
