@@ -30,8 +30,7 @@
             {{-- Spelare (<i>entries</i>)</p><p> --}}
             @foreach ($match->homeTeam[0]->players as $player)
                 @if (count($player->entries) != 0)
-                    {{$player->name}} (<i>
-                    {!! count($player->entries) !!}</i>) <br>                    
+                    {{$player->name}} (<i>{!! count($player->entries)!!}</i>) <br>                    
                 @endif
             @endforeach
             </p>
@@ -57,8 +56,7 @@
             {{-- Spelare (<i>entries</i>)</p><p> --}}
             @foreach ($match->awayTeam[0]->players as $player)
                 @if (count($player->entries) != 0)
-                    {{$player->name}} (<i>
-                    {!! count($player->entries) !!}</i>) <br>                    
+                    {{$player->name}} (<i>{!! count($player->entries)!!}</i>) <br>                    
                 @endif
             @endforeach
             </p>
