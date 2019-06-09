@@ -3,11 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Match;
+use App\Team;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class MatchController extends Controller
 {
+    /**
+     * Display a listing of group matches and standings.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function matchesByGroup($group)
+    {
+        if ($group = "ALL") {
+            $matches = Match::all();
+            $table = null;
+        }
+        else {
+            $matches = Match::where('group', $group)->get();
+            $table = Team::where('grupp', $group)->orderBy('points', 'desc')->orderBy('goalsFor', 'desc')->get();
+        }
+        return view('match.group', [
+            'matches' => $matches,
+            'table' => $table
+        ]);
+    }
+
     /**
      * Display a listing of todays matches.
      *
