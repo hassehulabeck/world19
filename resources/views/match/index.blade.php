@@ -7,7 +7,7 @@
             <div class="matchnummer col-12 col-md-2">
                 <h1>{{$match->id}}</h1>
                 <p>{{$match->venue}}</p>
-                <p>{{$match->date->format('H:i')}}</p>
+                <p>{{$match->date->format('j M, H:i')}}</p>
             </div>
                     
             <div class="col-6 col-md-4 offset-md-1">
