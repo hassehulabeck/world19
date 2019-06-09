@@ -16,13 +16,15 @@ class MatchController extends Controller
      */
     public function matchesByGroup($group)
     {
-        if ($group = "ALL") {
+        strtoupper($group);
+
+        if ($group == "all") {
             $matches = Match::all();
             $table = null;
         }
         else {
             $matches = Match::where('group', $group)->get();
-            $table = Team::where('grupp', $group)->orderBy('points', 'desc')->orderBy('goalsFor', 'desc')->get();
+            $table = Team::where('grupp', $group)->orderByRaw('goalsFor - goalsAgainst DESC')->orderBy('points', 'desc')->get();
         }
         return view('match.group', [
             'matches' => $matches,
