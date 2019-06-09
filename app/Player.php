@@ -10,6 +10,6 @@ class Player extends Model
         return $this->belongsTo('App\Team');
     }
     public function entries() {
-        return $this->hasMany('App\Entry', 'id', 'pick_id');
+        return $this->hasMany('App\Entry', 'pick_id');
     }
 }

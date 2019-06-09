@@ -50,19 +50,45 @@ li.entry:nth-child(5) {
 
 /* Matcher */
 
-div.match {
+
+/* div.match {
     display: flex;
 }
 
 div.match div {
-    flex: 0 1 auto;
+    flex: 0 1 33%;
+    margin: 0 1em;
+}
+*/
+
+div.match div:first-child p {
+    margin: 0;
 }
 
 div.match div:first-child {
     padding: 0.3em;
     background: white;
-    min-width: 10%;
     text-align: center;
+    /* min-width: 20%; */
     border-radius: 6px;
-    margin: 0.3em 0.5em;
+    margin: 0.3em 0;
 }
+
+div.match div:first-child:hover {
+    background: silver;
+}
+
+div.match div:nth-child(2) {
+    text-align: right;
+}
+
+div.match div:last-child {
+    text-align: left;
+}
+
+
+/* @media (max-width: 450px) {
+    div.match div:first-child {
+        min-width: 33%;
+    }
+} */
