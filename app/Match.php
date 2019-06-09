@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Match extends Model
 {
     protected $dates = ['date'];
-    
+
+    public $timestamps = false; 
+
     public function homeTeam () {
         return $this->hasMany('App\Team', 'id', 'home_team');
     }

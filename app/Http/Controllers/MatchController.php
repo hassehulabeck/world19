@@ -113,7 +113,56 @@ class MatchController extends Controller
      */
     public function update(Request $request, Match $match)
     {
-        //
+        // Spara i matches
+        $aktuellMatch = Match::find($match->id);
+
+        $aktuellMatch->home_goals = $request->homeGoals;
+        $aktuellMatch->away_goals = $request->awayGoals;
+
+        $aktuellMatch->save();
+
+        // Spara per team.
+        $homeTeam = Team::find($aktuellMatch->home_team);
+        $awayTeam = Team::find($aktuellMatch->away_team);
+
+        // Hemmalagets mål
+        $cgf = $homeTeam->goalsFor + $request->homeGoals;
+        $homeTeam->goalsFor = $cgf; 
+        $cga = $homeTeam->goalsAgainst + $request->awayGoals;
+        $homeTeam->goalsAgainst = $cga; 
+
+        // Bortalagets mål
+        $cgf = $awayTeam->goalsFor + $request->awayGoals;
+        $awayTeam->goalsFor = $cgf; 
+        $cga = $awayTeam->goalsAgainst + $request->homeGoals;
+        $awayTeam->goalsAgainst = $cga; 
+        
+        // Om det blev hemmavinst
+        if ($request->homeGoals > $request->awayGoals) {
+            $wins = $homeTeam->wins + 1;
+            $homeTeam->wins = $wins; 
+            $losses = $awayTeam->losses + 1;
+            $awayTeam->losses = $losses; 
+        }
+        // Om det blev bortavinst
+        if ($request->homeGoals < $request->awayGoals) {
+            $wins = $awayTeam->wins + 1;
+            $awayTeam->wins = $wins; 
+            $losses = $homeTeam->losses + 1;
+            $homeTeam->losses = $losses; 
+        }
+        // Om det blev oavgjort
+        if ($request->homeGoals == $request->awayGoals) {
+            $draws = $homeTeam->draws + 1;
+            $homeTeam->draws = $draws; 
+            $draws = $awayTeam->draws + 1;
+            $awayTeam->draws = $draws; 
+        }
+        
+        $homeTeam->save();
+        $awayTeam->save();
+
+        return redirect('matches');
     }
 
     /**

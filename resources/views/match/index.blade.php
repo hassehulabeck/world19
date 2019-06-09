@@ -30,6 +30,19 @@
                 </h4>                                            
                 @endif
             </div>
+            @can('admin-only')
+                {!! Form::open(['route' => ['matches.update', $match->id], 'method' => 'post']) !!}
+                {{ method_field('PATCH') }}
+                @csrf
+
+                <div class="form-group">
+                        <input type="text" name="homeGoals" value="0">
+                        <input type="text" name="awayGoals" value="0">
+                        <input type="submit" class="btn btn-sm btn-danger" value="Spara resultatet">
+                </div>
+                {!! Form::close() !!}
+    
+            @endcan
         </div>
     @endforeach
 
