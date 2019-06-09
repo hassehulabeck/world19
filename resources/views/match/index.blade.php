@@ -3,7 +3,7 @@
 @section('content')
     
     @foreach ($matches as $match)
-        <div class="match row">
+        <div class="match row {{$match->date < new DateTime() ? 'passed' : ''  }} ">
             <div class="matchnummer col-12 col-md-2">
                 <h1>{{$match->id}}</h1>
                 <p>{{$match->venue}}</p>
@@ -31,6 +31,8 @@
                 @endif
             </div>
             @can('admin-only')
+                @if ($match->home_goals === null)
+                    
                 {!! Form::open(['route' => ['matches.update', $match->id], 'method' => 'post']) !!}
                 {{ method_field('PATCH') }}
                 @csrf
@@ -41,6 +43,7 @@
                         <input type="submit" class="btn btn-sm btn-danger" value="Spara resultatet">
                 </div>
                 {!! Form::close() !!}
+                @endif
     
             @endcan
         </div>

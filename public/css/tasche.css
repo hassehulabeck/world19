@@ -86,9 +86,6 @@ div.match div:last-child {
     text-align: left;
 }
 
-
-/* @media (max-width: 450px) {
-    div.match div:first-child {
-        min-width: 33%;
-    }
-} */
+.passed {
+    opacity: 0.6;
+}
