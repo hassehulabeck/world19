@@ -42,6 +42,31 @@
                         <li class="nav-item"><a class="nav-link" href="/matches/today">Dagens matcher</a></li>
                         <li class="nav-item"><a class="nav-link" href="/teams">Teams</a></li>
                         <li class="nav-item"><a class="nav-link" href="/players">Players</a></li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Grupper
+                            </a>    
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/matches/group/a">
+                                A
+                                </a>
+                                <a class="dropdown-item" href="/matches/group/b">
+                                    B
+                                </a>
+                                <a class="dropdown-item" href="/matches/group/c">
+                                    C
+                                </a>
+                                <a class="dropdown-item" href="/matches/group/d">
+                                    D
+                                </a>
+                                <a class="dropdown-item" href="/matches/group/e">
+                                    E
+                                </a>
+                                <a class="dropdown-item" href="/matches/group/f">
+                                    F
+                                </a>
+                            </div>
+                        </li>
                         <li class="nav-item"><a class="nav-link" href="/forum">Forum</a></li>
                         <li class="nav-item"><a class="nav-link" href="/matches">Matcher</a></li>
                         <li class="nav-item"><a class="nav-link" href="/table">Ställning</a></li>
