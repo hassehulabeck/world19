@@ -29,6 +29,10 @@
             </li>     
         @endif 
     @endforeach
-
     </ul>
+    @if ($entries[0]->user->id == Auth::id())
+        <a href="/entries/{{$entries[0]->user->id}}/edit">
+        <button class="btn btn-info btn-sm">Byt lag/spelare</button>
+        </a>
+    @endif
 @endsection

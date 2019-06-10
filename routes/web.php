@@ -27,7 +27,6 @@ Route::get('/table', 'EntryController@table');
 Route::get('/matches/today', 'MatchController@matchesToday');
 Route::get('/matches/group/{group}', 'MatchController@matchesByGroup');
 
-
 Route::resource('/teams', 'TeamController');
 Route::resource('/players', 'PlayerController');
 Route::resource('/entries', 'EntryController');

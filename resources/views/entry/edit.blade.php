@@ -10,7 +10,7 @@
   </ul>
 @endif
 
-@if (new DateTime("2019-06-07 19:00:00") > new DateTime())
+@if (new DateTime("2019-06-07 21:00:00") > new DateTime())
 
 {{ Form::open(array('method'=>'PUT','route' => ['entries.update', $userID])) }}
 <div class="row">

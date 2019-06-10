@@ -89,3 +89,15 @@ div.match div:last-child {
 .passed {
     opacity: 0.6;
 }
+
+.table th,
+.table td {
+    padding: 0.33em;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6),
+.table th:last-child,
+.table td:last-child {
+    padding-left: 1em;
+}
