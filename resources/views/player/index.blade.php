@@ -11,6 +11,7 @@
                             <span class="flag-icon flag-icon-{{$goalie->team->abbreviation }} ">
                             </span>
                             {{ $goalie->name }}
+                            [ {{ count($goalie->entries) }} ]
                             @for ($i = 0; $i < $goalie->points; $i++)
                                 &star;
                             @endfor
@@ -28,6 +29,7 @@
                         <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
                         </span>
                         {{ $player->name }}
+                        [ {{ count($player->entries) }} ]
                         @for ($i = 0; $i < $player->points; $i++)
                             &#10026;
                         @endfor
@@ -45,6 +47,7 @@
                             <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
                             </span>
                             {{ $player->name }}
+                            [ {{ count($player->entries) }} ]
                             @for ($i = 0; $i < $player->points; $i++)
                                 &#10026;
                             @endfor
@@ -64,6 +67,7 @@
                             <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
                             </span>
                             {{ $player->name }}
+                            [ {{ count($player->entries) }} ]
                             @for ($i = 0; $i < $player->points; $i++)
                                 &#10026;
                             @endfor
@@ -81,6 +85,7 @@
                             <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
                             </span>
                             {{ $player->name }}
+                            [ {{ count($player->entries) }} ]
                             @for ($i = 0; $i < $player->points; $i++)
                                 &#10026;
                             @endfor
@@ -98,6 +103,7 @@
                             <span class="flag-icon flag-icon-{{$player->team->abbreviation }} ">
                             </span>
                             {{ $player->name }}
+                            [ {{ count($player->entries) }} ]
                             @for ($i = 0; $i < $player->points; $i++)
                                 &#10026;
                             @endfor
@@ -106,6 +112,6 @@
                 </ul>
         @endforeach    
     </div>
-    <p><i>En &star; för målvakterna innebär en "hållen nolla", och en  &#10026; för utespelarna innebär ett mål.</i></p>
+    <p><i>Siffran inom klamrarna är antal entries som spelaren är med på. En &star; för målvakterna innebär en "hållen nolla", och en  &#10026; för utespelarna innebär ett mål.</i></p>
 </div>
 @endsection

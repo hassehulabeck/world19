@@ -11,6 +11,7 @@
                     </span>
                     <a href="/teams/{{$team->id}}">
                     {{ $team->name }}
+                    [ {{ count($team->entries) }} ]
                     @for ($i = 0; $i < $team->points; $i++)
                         &starf;
                     @endfor
@@ -28,6 +29,7 @@
                     </span>
                     <a href="/teams/{{$team->id}}">
                     {{ $team->name }}
+                    [ {{ count($team->entries) }} ]
                     @for ($i = 0; $i < $team->points; $i++)
                         &starf;
                     @endfor
@@ -47,6 +49,7 @@
                     </span>
                     <a href="/teams/{{$team->id}}">
                     {{ $team->name }}
+                    [ {{ count($team->entries) }} ]
                     @for ($i = 0; $i < $team->points; $i++)
                         &starf;
                     @endfor
@@ -64,6 +67,7 @@
                         </span>
                         <a href="/teams/{{$team->id}}">
                         {{ $team->name }}
+                        [ {{ count($team->entries) }} ]
                         @for ($i = 0; $i < $team->points; $i++)
                             &starf;
                         @endfor
@@ -73,6 +77,6 @@
             @endforeach
         </div>
     </div>
-    <p><i>En &starf; per vinst.</i></p>
+    <p><i>Siffran inom klamrarna är antal entries som laget är med på. En &starf; per vinst.</i></p>
 </div>    
 @endsection
