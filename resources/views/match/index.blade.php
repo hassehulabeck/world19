@@ -11,7 +11,7 @@
             </div>
                     
             <div class="col-6 col-md-4 offset-md-1">
-                @if ($match->homeTeam[0] !== null)
+                @if (count($match->homeTeam) > 0)
                 {{$match->homeTeam[0]->name}}
                 <span class="flag-icon flag-icon-{{$match->homeTeam[0]->abbreviation }} ">
                     </span>
@@ -33,7 +33,7 @@
             </div>
                     
                 @else
-                    Lag ej klara                    
+                    {{ $match->group }}               
                 @endif
             @can('admin-only')
                 @if ($match->home_goals === null)
