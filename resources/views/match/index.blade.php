@@ -30,11 +30,11 @@
                     {{$match->away_goals}}
                 </h4>                                            
                 @endif
-            </div>
-                    
                 @else
                     {{ $match->group }}               
                 @endif
+            </div>
+                    
             @can('admin-only')
                 @if ($match->home_goals === null)
                     
