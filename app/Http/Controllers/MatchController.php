@@ -25,7 +25,6 @@ class MatchController extends Controller
         else {
             $matches = Match::where('group', $group)->get();
             $table = Team::where('grupp', $group)
-            ->where('matches.id', '<', 37)
             ->orderByRaw('goalsFor - goalsAgainst DESC')
             ->orderBy('points', 'desc')
             ->get();
